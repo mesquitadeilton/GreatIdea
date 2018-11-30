@@ -8,7 +8,7 @@
 		<title>Cadastrar</title>
 
 		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="register.css">
+		<link rel="stylesheet" href="login.css">
 
 		<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
 	</head>
@@ -26,23 +26,11 @@
 		</div>
 
 		<div class="content">
-			<form action="func_register.php" method="POST">
-				<h1>CADASTRAR</h1>
-				<br>
-				<h2>NOME</h1>
-				<input type="text" name="name">
-				<br>
+			<form action="func_login.php" method="POST">
+				<h1>FAZER LOGIN</h1>
 				<br>
 				<h2>EMAIL</h1>
-				<input type="text" name="email">
-				<br>
-				<br>
-				<h2>TELEFONE</h1>
-				<input type="text" name="phone">
-				<br>
-				<br>
-				<h2>CIDADE</h1>
-				<input type="text" name="city">
+				<input type="text" name="login">
 				<br>
 				<br>
 				<h2>SENHA</h1>
@@ -50,7 +38,7 @@
 				<br>
 				<br>
 				<br>
-				<input id="bt" type="submit" name="bt_submit" value="FINALIZAR">
+				<input id="bt" type="submit" name="bt_submit" value="ENTRAR">
 			</form>
 		</div>
 	</body>

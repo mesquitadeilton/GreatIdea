@@ -21,5 +21,18 @@
 
 			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA");
 		}
+
+		public function login($login, $password){
+			$link = $this->connect();
+			$string = "SELECT * FROM users WHERE email = '$login' AND password = MD5('$password')";
+
+			$query = mysqli_query($link, $string) or die("FALHA NA BUSCA");
+
+			if(mysqli_num_rows($query) > 0)
+				return TRUE;
+
+			else
+				return FALSE;
+		}
 	}
 ?>

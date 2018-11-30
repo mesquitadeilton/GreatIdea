@@ -24,5 +24,5 @@
 	$_SESSION['login'] = $tempUser->getEmail();
 	$_SESSION['password'] = $tempUser->getPassword();
 
-	header('location: register.php');
+	header('location: index.php');
 ?>

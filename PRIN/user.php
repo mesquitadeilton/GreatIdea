@@ -6,6 +6,10 @@
 		private $city;
 		private $password;
 
+		public function __construct{
+			
+		}
+
 		public function setName($name){
 			$this->name = $name;
 		}

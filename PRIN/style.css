@@ -55,6 +55,36 @@ label[for="bt_menu"]{
 	margin-right: 15px;
 }
 
+#bt_register{
+	background-color: #ffb000;
+	border: none;
+	color: #000;
+	cursor: pointer;
+	font-family: 'Pathway Gothic One', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	height: 50px;
+	margin-left: 40%;
+	margin-right: 40%;
+	outline: none;
+	width: 20%;
+}
+
+#bt_login{
+	background-color: #ffb000;
+	border: none;
+	color: #000;
+	cursor: pointer;
+	font-family: 'Pathway Gothic One', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	height: 50px;
+	margin-left: 40%;
+	margin-right: 40%;
+	outline: none;
+	width: 20%;
+}
+
 @media(max-width: 768px){
 	.menu{
 		display: none;
