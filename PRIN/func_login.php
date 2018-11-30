@@ -8,17 +8,17 @@
 	$password = $_POST["password"];
 
 	$tempUser = new user();
-	$tempUser->setEmail($email);
+	$tempUser->setEmail($login);
 	$tempUser->setPassword($password);
 
 	$db = new database();
-	$result = $db->login($tempUserLogin->getLogin(), $tempUserLogin->getPassword());
+	$result = $db->login($tempUser->getEmail(), $tempUser->getPassword());
 
 	if($result == TRUE){
 		session_start();
 
-		$_SESSION['login'] = $tempUserLogin->getLogin();
-		$_SESSION['password'] = $tempUserLogin->getPassword();
+		$_SESSION['login'] = $tempUser->getEmail();
+		$_SESSION['password'] = $tempUser->getPassword();
 
 		header('location: index.php');
 	}

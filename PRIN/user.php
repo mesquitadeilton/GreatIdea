@@ -6,7 +6,7 @@
 		private $city;
 		private $password;
 
-		public function __construct{
+		public function __construct(){
 			
 		}
 
