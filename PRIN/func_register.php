@@ -10,19 +10,22 @@
 	$city = $_POST["city"];
 	$password = $_POST["password"];
 
-	$tempUser = new user();
-	$tempUser->setName($name);
-	$tempUser->setEmail($email);
-	$tempUser->setPhone($phone);
-	$tempUser->setCity($city);
-	$tempUser->setPassword($password);
+	if(empty($name) || empty($email) || empty($phone) || empty($phone) || empty($city) || empty($password)){
+		header('location: register.php');
+	}
+	else{
+		$tempUser = new user();
+		$tempUser->setName($name);
+		$tempUser->setEmail($email);
+		$tempUser->setPhone($phone);
+		$tempUser->setCity($city);
+		$tempUser->setPassword($password);
 
-	$db = new database();
-	$db->insert($tempUser->getName(), $tempUser->getEmail(), $tempUser->getPhone(), $tempUser->getCity(), $tempUser->getPassword());
+		$db = new database();
+		$db->insert($tempUser->getName(), $tempUser->getEmail(), $tempUser->getPhone(), $tempUser->getCity(), $tempUser->getPassword());
 
-	session_start();
-	$_SESSION['login'] = $tempUser->getEmail();
-	$_SESSION['password'] = $tempUser->getPassword();
+		$result = $db->login($tempUser->getEmail(), $tempUser->getPassword());
 
-	header('location: index.php');
+		header('location: index.php');
+	}
 ?>

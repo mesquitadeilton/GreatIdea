@@ -20,8 +20,8 @@
 			<?php
 				session_start();
 
-				if (!empty($_SESSION['login']))
-					echo "Olá ".$_SESSION['login'];
+				if (!empty($_SESSION['name']))
+					echo "Olá ".$_SESSION['name'];
 			?>
 		</div>
 

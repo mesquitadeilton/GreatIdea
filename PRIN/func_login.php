@@ -15,11 +15,6 @@
 	$result = $db->login($tempUser->getEmail(), $tempUser->getPassword());
 
 	if($result == TRUE){
-		session_start();
-
-		$_SESSION['login'] = $tempUser->getEmail();
-		$_SESSION['password'] = $tempUser->getPassword();
-
 		header('location: index.php');
 	}
 	else{

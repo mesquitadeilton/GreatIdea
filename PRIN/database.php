@@ -27,12 +27,27 @@
 			$string = "SELECT * FROM users WHERE email = '$login' AND password = MD5('$password')";
 
 			$query = mysqli_query($link, $string) or die("FALHA NA BUSCA");
+			$search = mysqli_fetch_array($query);
+			$name = $search['name'];
+			$email = $search['email'];
+			$phone = $search['phone'];
+			$city = $search['city'];
+			$password = $search['password'];
 
-			if(mysqli_num_rows($query) > 0)
+			if(mysqli_num_rows($query) > 0){
+				session_start();
+
+				$_SESSION['name'] = $name;
+				$_SESSION['email'] = $email;
+				$_SESSION['phone'] = $phone;
+				$_SESSION['city'] = $city;
+				$_SESSION['password'] = $password;
+
 				return TRUE;
-
-			else
+			}
+			else{
 				return FALSE;
+			}
 		}
 	}
 ?>
