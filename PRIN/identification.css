@@ -1,0 +1,34 @@
+*{margin: 0}
+
+.content{
+	background-color: #ffb000;
+	height: auto;
+	margin: auto;
+	margin-bottom: 5%;
+	margin-top: 5%;
+	padding: 40px;
+	width: 380px;
+}
+
+input {
+	background-color: #ffb000;
+	border: none;
+	border-bottom: solid 1px #000;
+	font-family: 'Pathway Gothic One', sans-serif;
+	font-size: 1.1em;
+	height: 2em;
+	outline: none;
+	padding: 2px;
+	width: 100%;
+}
+
+#bt_identification{
+	background-color: #000;
+	border: none;
+	color: #ffb000;
+	cursor: pointer;
+	font-weight: bolder;
+	height: 2em;
+	margin-left: 75%;
+	width: 100px;
+}

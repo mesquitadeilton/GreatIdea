@@ -7,50 +7,53 @@
 
 		<title>Cadastrar</title>
 
-		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="register.css">
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="identification.css">
 
 		<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
 	</head>
+
 	<body>
-		<div class="top">
-			<input type="checkbox" id="bt_menu">
+		<header>
+			<input id="bt_menu" type="checkbox">
 			<label for="bt_menu">&#9776;</label>
 
-			<?php
-				session_start();
-
-				if (!empty($_SESSION['name']))
-					echo "Olá ".$_SESSION['name'];
-			?>
-		</div>
+			<nav class="menu">
+				<ul>
+					<li><a href="index.php">INICIO</a></li>
+					<li><a href="">SOFTWARES</a></li>
+					<li><a href="">PROTOTIPOS</a></li>
+					<li><a href="">SOBRE</a></li>
+				</ul>
+			</nav>
+		</header>
 
 		<div class="content">
-			<form action="func_register.php" method="POST">
-				<h1>CADASTRAR</h1>
-				<br>
-				<h2>NOME</h1>
+			<h1 style="text-align: center;">CADASTRAR</h1>
+			<br>
+			<form action="func_login.php" method="POST">
+				<h4>NOME</h4>
 				<input type="text" name="name">
 				<br>
 				<br>
-				<h2>EMAIL</h1>
+				<h4>EMAIL</h4>
 				<input type="text" name="email">
 				<br>
 				<br>
-				<h2>TELEFONE</h1>
+				<h4>TELEFONE</h4>
 				<input type="text" name="phone">
 				<br>
 				<br>
-				<h2>CIDADE</h1>
+				<h4>CIDADE</h4>
 				<input type="text" name="city">
 				<br>
 				<br>
-				<h2>SENHA</h1>
+				<h4>SENHA</h4>
 				<input type="password" name="password">
 				<br>
 				<br>
 				<br>
-				<input id="bt" type="submit" name="bt_submit" value="FINALIZAR">
+				<input id="bt_identification" type="submit" name="bt_register" value="FINALIZAR">
 			</form>
 		</div>
 	</body>
