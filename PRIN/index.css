@@ -91,3 +91,34 @@
 	margin-top: 15px;	
 	padding: 10px;
 }
+
+#bt_menu{
+	display: none;
+}
+
+label[for="bt_menu"]{
+	color: #ffb000;
+	cursor: pointer;
+	display: none;
+	font-size: 30px;
+	float: right;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	width: 70px;
+}
+
+@media(max-width: 950px){
+	.menu{
+		display: none;
+	}
+
+	.buttons{
+		display: none;
+	}
+
+	label[for="bt_menu"]{
+		display: block;
+		margin-left: auto;
+	}
+}
