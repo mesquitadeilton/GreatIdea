@@ -1,9 +1,5 @@
 *{margin: 0}
 
-body{
-	font-family: 'Pathway Gothic One', sans-serif;
-}
-
 header{
 	border-bottom: solid 5px #ffb000;
 	height: 70px;
@@ -25,11 +21,39 @@ label[for="bt_menu"]{
 	margin: 0 15px;
 }
 
+.name_site{
+	position: fixed;
+    height: 11%;
+    left: 9%;
+    line-height: 70px;
+    width: 16%;
+    font-family: 'Righteous', cursive;
+	
+}
+
+.name_site a{
+	text-decoration: none;
+	font-size: 25px;
+	color: #000;
+}
+
+#logo{
+    position: fixed;
+    height: 40px;
+    width: 48px;
+    top: 10px;
+    left: 71px;
+    line-height: 70px;
+
+}
+
 .menu{
-	height: 70px;
-	line-height: 70px;
-	margin: auto;
-	width: 390px;
+    position: fixed;
+    left: 35%;
+    height: 11%;
+    line-height: 70px;
+    margin: auto;
+    width: 57%;
 }
 
 .menu ul{
@@ -43,9 +67,11 @@ label[for="bt_menu"]{
 
 .menu ul li a{
 	color: #000;
-	font-size: 1.1em;
+	font-size: 13px;
 	font-weight: bolder;
 	text-decoration: none;
+	font-family:'Lato', sans-serif;
+
 }
 
 .menu ul li a:hover{
