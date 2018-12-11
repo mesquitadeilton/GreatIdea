@@ -1,0 +1,96 @@
+*{margin: 0}
+
+header{
+	border-bottom: solid 5px #ffb000;
+	height: 70px;
+	padding: 0 5%;
+}
+
+#bt_menu{
+	display: none;
+}
+
+label[for="bt_menu"]{
+	color: #ffb000;
+	cursor: pointer;
+	display: none;
+	float: right;
+	font-size: 30px;
+	height: 70px;
+	line-height: 70px;
+	margin: 0 15px;
+}
+
+.name_site{
+	position: fixed;
+    height: 11%;
+    left: 9%;
+    line-height: 70px;
+    width: 16%;
+    font-family: 'Righteous', cursive;
+	
+}
+
+.name_site a{
+	text-decoration: none;
+	font-size: 25px;
+	color: #000;
+}
+
+#logo{
+    position: fixed;
+    height: 40px;
+    width: 48px;
+    top: 10px;
+    left: 71px;
+    line-height: 70px;
+
+}
+
+.menu{
+    position: fixed;
+    left: 35%;
+    height: 11%;
+    line-height: 70px;
+    margin: auto;
+    width: 57%;
+}
+
+.menu ul{
+	list-style: none;
+}
+
+.menu ul li{
+	float: left;
+	margin: 0 15px;
+}
+
+.menu ul li a{
+	color: #000;
+	font-size: 13px;
+	font-weight: bolder;
+	text-decoration: none;
+	font-family:'Lato', sans-serif;
+
+}
+
+.menu ul li a:hover{
+	color: #ffb000;
+}
+nav{display:block; }
+
+#user {     display: block;
+    margin: 0 15px;
+    float: right;
+    color: #000;
+    font-size: 13px;
+    font-weight: bolder;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+line-height: 70px;}
+
+@media(max-width: 768px){
+	label[for="bt_menu"]{
+		display: block;
+	}
+}

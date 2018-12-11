@@ -1,0 +1,77 @@
+*{margin: 0; padding: 0;}
+
+body{
+	font-family: 'Pathway Gothic One', sans-serif;
+}
+
+.content{
+	background-color: #ffb000;
+	height: auto;
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-bottom: 5%;
+	margin-top: 5%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	width: 40%;
+}
+
+h1{
+	color: #000;
+	font-size: 35px;
+	text-align: center;
+	width: 100%;
+}
+
+h2{
+	color: #000;
+	font-size: 18px;
+	margin-left: 15%;
+	margin-right: 15%;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	width: 70%;
+}
+
+input{
+	background-color: #ffb000;
+	border: none;
+	border-bottom: solid 2px #000;
+	color: #000;
+	font-family: 'Pathway Gothic One', sans-serif;
+	font-size: 18px;
+	height: 30px;
+	margin-left: 15%;
+	margin-right: 15%;
+	outline: none;
+	padding-left: 2px;
+	padding-right: 2px;
+	width: 70%;
+}
+
+input[type=text]{
+	outline: none;
+}
+
+#bt{
+	background-color: #000;
+	border: none;
+	color: #ffb000;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 18px;
+	height: 35px;
+	margin-left: 65%;
+	margin-right: 15%;
+	width: 20%;
+}
+
+@media(max-width: 768px){
+	.content{
+		margin-bottom: 10%;
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 10%;
+		width: 100%;
+	}
+}
