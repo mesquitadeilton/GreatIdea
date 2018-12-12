@@ -1,0 +1,62 @@
+*{
+	font-family: 'Pathway Gothic One', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.top{
+	border-bottom: solid 5px #ffb000;
+	display: flex;
+	height: 70px;
+	width: 100%;
+}
+
+.logo{
+	font-family: 'Righteous', cursive;
+	font-size: 2em;
+	height: 70px;
+	line-height: 70px;
+	margin: auto;
+	width: 160px;
+}
+
+.menu{
+	height: 70px;
+	margin: auto;
+	width: 254px;
+}
+
+.menu ul{
+	list-style: none;
+}
+
+.menu ul li a{
+	color: #000;
+	font-size: 1em;
+	float: left;
+	margin: 26px 10px;
+	text-decoration: none;
+}
+
+.menu ul li a:hover{
+	color: #ffb000;
+}
+
+.button{
+	display: flex;
+	height: 70px;
+	line-height: 70px;
+	margin: auto;
+	width: 160px;
+}
+
+#bt_identification{
+	background-color: #ffb000;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 1em;
+	margin: 0px 30px;
+	padding: 11px;
+	width: 100px;
+}
