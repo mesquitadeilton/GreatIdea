@@ -18,6 +18,12 @@
 			include 'menu.php';
 		?>
 
+		<div class="register">
+			<form action="register.php" method="POST">
+				<input id="bt_register" name="bt_register" type="submit" value="CADASTRAR">
+			</form>
+		</div>
+
 		<div class="content">
 			<form action="func_identification.php" method="POST">
 				EMAIL
@@ -32,9 +38,6 @@
 				<br>
 				<input id="bt_login" name="bt_login" type="submit" value="ENTRAR">
 			</form>
-			<br>
-			<br>
-			<br>
 		</div>
 	</body>
 </html>

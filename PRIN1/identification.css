@@ -1,9 +1,19 @@
+.register{
+	background-color: #ffb000;
+	color: #000;
+	font-size: 1em;
+	height: 40px;
+	margin: 50px auto 20px;
+	padding: 20px;
+	width: 410px;
+}
+
 .content{
 	background-color: #ffb000;
 	color: #000;
 	font-size: 1em;
 	height: 225px;
-	margin: 50px auto 0px;
+	margin: 0px auto 50px;
 	padding: 50px;
 	width: 350px;
 }
@@ -28,4 +38,15 @@
 	font-size: 1em;
 	padding: 11px;
 	width: 100px;
+}
+
+#bt_register{
+	background-color: #000;
+	border: none;
+	color: #ffb000;
+	cursor: pointer;
+	float: right;
+	font-size: 1em;
+	padding: 11px;
+	width: 410px;
 }
