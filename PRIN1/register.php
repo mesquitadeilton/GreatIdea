@@ -14,10 +14,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
 	</head>
 	<body>
-		<?php
-			include 'menu.php'
-		?>
-
 		<div class="content" style="height: auto;">
 			<form action="func_register.php">
 				<label>NOME</label>

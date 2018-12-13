@@ -14,9 +14,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
 	</head>
 	<body>
-		<?php
-			include 'menu.php';
-		?>
 		<div class="content" style="margin-bottom: 20px;">
 			<form action="func_identification.php" method="POST">
 				<label>EMAIL</label>
