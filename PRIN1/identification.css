@@ -2,8 +2,9 @@
 	background-color: #ffb000;
 	color: #000;
 	font-size: 1em;
+	font-weight: bolder;
 	height: 40px;
-	margin: 50px auto 20px;
+	margin: 0px auto 50px;
 	padding: 20px;
 	width: 410px;
 }
@@ -12,10 +13,16 @@
 	background-color: #ffb000;
 	color: #000;
 	font-size: 1em;
-	height: 225px;
-	margin: 0px auto 50px;
+	height: auto;
+	margin: 50px auto;
 	padding: 50px;
 	width: 350px;
+}
+
+.content a{
+	color: #fff;
+	font-size: 0.8em;
+	text-decoration: none;
 }
 
 #credential_bar{
@@ -29,10 +36,10 @@
 	width: 346px;
 }
 
-#bt_login{
+#bt_submit{
 	background-color: #000;
 	border: none;
-	color: #ffb000;
+	color: #fff;
 	cursor: pointer;
 	float: right;
 	font-size: 1em;
@@ -43,10 +50,22 @@
 #bt_register{
 	background-color: #000;
 	border: none;
-	color: #ffb000;
+	color: #fff;
 	cursor: pointer;
+	font-size: 1em;
+	margin: 0px 30px;
+	padding: 11px;
+	width: 350px;
+}
+
+#state{
+	background-color: #000;
+	border: none;
+	color: #fff;
 	float: right;
 	font-size: 1em;
-	padding: 11px;
-	width: 410px;
+	height: 34px;
+	outline: none;
+	padding: 5px;
+	width: 100px;
 }

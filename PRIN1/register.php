@@ -1,59 +1,87 @@
 <!DOCTYPE html>
 
-<html lang="pt">
+<html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>Cadastrar</title>
+		<title>Great Idea | CADASTRAR</title>
 
-		<link rel="stylesheet" href="index.css">
 		<link rel="stylesheet" href="identification.css">
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="menu.css">
 
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
 	</head>
-
 	<body>
-		<header>
-			<input id="bt_menu" type="checkbox">
-			<label for="bt_menu">&#9776;</label>
+		<?php
+			include 'menu.php'
+		?>
 
-			<nav class="menu">
-				<ul>
-					<li><a href="index.php">INICIO</a></li>
-					<li><a href="">SOFTWARES</a></li>
-					<li><a href="">PROTOTIPOS</a></li>
-					<li><a href="">SOBRE</a></li>
-				</ul>
-			</nav>
-		</header>
-
-		<div class="content">
-			<h1 style="text-align: center;">CADASTRAR</h1>
-			<br>
-			<form action="func_login.php" method="POST">
-				<h4>NOME</h4>
-				<input type="text" name="name">
+		<div class="content" style="height: auto;">
+			<form action="func_register.php">
+				<label>NOME</label>
+				<input id="credential_bar" name="name" type="text">
 				<br>
 				<br>
-				<h4>EMAIL</h4>
-				<input type="text" name="email">
+				<label>CPF</label>
+				<input id="credential_bar" name="cpf" type="text">
 				<br>
 				<br>
-				<h4>TELEFONE</h4>
-				<input type="text" name="phone">
+				<label>EMAIL</label>
+				<input id="credential_bar" name="email" type="text">
 				<br>
 				<br>
-				<h4>CIDADE</h4>
-				<input type="text" name="city">
+				<label>TELEFONE</label>
+				<input id="credential_bar" name="phone" type="text">
 				<br>
 				<br>
-				<h4>SENHA</h4>
-				<input type="password" name="password">
+				<label>CIDADE</label>
+				<br>
+				<input id="credential_bar" name="city" type="text" style="width: 200px">
+				<select id="state" placeholder="ESTADO">
+					<option>ACRE</option>
+				    <option>ALAGOAS</option>
+				    <option>AMAPA</option>
+				    <option>AMAZONAS</option>
+				    <option>BAHIA</option>
+				    <option>CEARÁ</option>
+				    <option>DISTRITO FEDERAL</option>
+				    <option>ESPIRITO SANTO</option>
+				    <option>GOIAS</option>
+				    <option>MARANHÃO</option>
+				    <option>MATO GROSSO</option>
+				    <option>MATO GROSSO DO SUL</option>
+				    <option>MINAS GERAIS</option>
+				    <option>PARA</option>
+				    <option>PARAIBA</option>
+				    <option>PARANÁ</option>
+				    <option>PERNAMBUCO</option>
+				    <option>PIAUI</option>
+				    <option>RIO DE JANEIRO</option>
+				    <option>RIO GRANDE DO NORTE</option>
+				    <option>RIO GRANDE DO SUL</option>
+				    <option>RONDONIA</option>
+				    <option>RORAIMA</option>
+				    <option>SANTA CATARINA</option>
+				    <option>SAO PAULO</option>
+				    <option>SERGIPE</option>
+				    <option>TOCANTIS</option>
+				</select>
+				<br>
+				<br>
+				<label>SENHA</label>
+				<input id="credential_bar" name="password" type="password">
 				<br>
 				<br>
 				<br>
-				<input id="bt_identification" type="submit" name="bt_register" value="FINALIZAR">
+				<input name="check_cliente" type="checkbox" style="margin-right: 5px;">
+				<label>CLIENTE</label>
+				<input name="check_criador" type="checkbox" style="margin-left: 20px; margin-right: 5px;">
+				<label>CRIADOR</label>
+				<input id="bt_submit" name="bt_register" type="submit" value="CADASTRAR">
+				<br>
+				<br>
 			</form>
 		</div>
 	</body>
