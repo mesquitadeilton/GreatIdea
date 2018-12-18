@@ -17,11 +17,11 @@
 		<div class="content" style="height: auto;">
 			<form action="func_register.php" method="POST">
 				<label>NOME</label>
-				<input id="credential_bar" name="name" type="text">
+				<input id="credential_bar" name="name" placeholder="CAMPO OBRIGATÓRIO" type="text">
 				<br>
 				<br>
 				<label>CPF</label>
-				<input id="credential_bar" name="cpf" type="text">
+				<input id="credential_bar" name="cpf" placeholder="CAMPO OBRIGATÓRIO" type="text">
 				<br>
 				<br>
 				<label>DATA DE NASCIMENTO</label>
@@ -29,7 +29,7 @@
 				<br>
 				<br>
 				<label>EMAIL</label>
-				<input id="credential_bar" name="email" type="text">
+				<input id="credential_bar" name="email" placeholder="CAMPO OBRIGATÓRIO" type="text">
 				<br>
 				<br>
 				<label>TELEFONE</label>
@@ -40,6 +40,7 @@
 				<br>
 				<input id="credential_bar" name="city" type="text" style="width: 200px">
 				<select id="state" name="state">
+					<option disabled selected>ESTADO</option>
 					<option>ACRE</option>
 				    <option>ALAGOAS</option>
 				    <option>AMAPA</option>
@@ -71,11 +72,11 @@
 				<br>
 				<br>
 				<label>SENHA</label>
-				<input id="credential_bar" name="password" type="password">
+				<input id="credential_bar" name="password" placeholder="CAMPO OBRIGATÓRIO" type="password">
 				<br>
 				<br>
 				<br>
-				<input name="check_client" type="checkbox" style="margin-right: 5px;">
+				<input checked name="check_client" type="checkbox" style="margin-right: 5px;">
 				<label>CLIENTE</label>
 				<input name="check_creator" type="checkbox" style="margin-left: 20px; margin-right: 5px;">
 				<label>CRIADOR</label>

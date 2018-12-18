@@ -35,6 +35,14 @@
 		$tempDao = new daoUser();
 		$tempDao->register($tempUser->getName(), $tempUser->getCPF(), $tempUser->getBirthDate(), $tempUser->getEmail(), $tempUser->getPhone(), $tempUser->getCity(), $tempUser->getState(), $tempUser->getPassword());
 
+		if($_POST['check_client']){
+			$tempDao->register_client($tempUser->getCPF());
+		}
+
+		if($_POST['check_creator']){
+			$tempDao->register_creator($tempUser->getCPF());
+		}
+
 		session_start();
 		$nick = explode(" ", (string)$tempUser->getName());
 		$_SESSION['nick'] = strtoupper($nick[0]);

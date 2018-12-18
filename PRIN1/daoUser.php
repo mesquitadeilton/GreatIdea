@@ -22,6 +22,20 @@
 			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA");
 		}
 
+		public function register_client($cpf){
+			$link = $this->connect();
+			$string = "INSERT INTO client(cpf) VALUES('$cpf')";
+
+			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA CLIENT");
+		}
+
+		public function register_creator($cpf){
+			$link = $this->connect();
+			$string = "INSERT INTO creator(cpf) VALUES('$cpf')";
+
+			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA CLIENT");
+		}
+
 		public function login($login, $password){
 			$link = $this->connect();
 			$string = "SELECT * FROM `users` WHERE `email` = '$login' AND `password` = MD5('$password')";
