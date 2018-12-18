@@ -15,9 +15,9 @@
 	</head>
 	<body>
 		<div class="content" style="margin-bottom: 20px;">
-			<form action="func_identification.php" method="POST">
+			<form action="func_login.php" method="POST">
 				<label>EMAIL</label>
-				<input id="credential_bar" name="email" type="text">
+				<input id="credential_bar" name="login" type="text">
 				<br>
 				<br>
 				<br>

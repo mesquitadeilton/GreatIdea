@@ -1,23 +1,38 @@
 <?php
 	include 'user.php';
-	include 'database.php';
+	include 'daoUser.php';
 
-	ini_set('default_charset','UTF-8');
+	if(empty($_POST['login']) || empty($_POST['password'])){
+		?>
 
-	$login = $_POST["login"];
-	$password = $_POST["password"];
+		<script> 
+			alert('PREENCHA OS CAMPOS PARA CONTINUAR');
+			parent.location = 'identification.php';
+		</script>
 
-	$tempUser = new user();
-	$tempUser->setEmail($login);
-	$tempUser->setPassword($password);
-
-	$db = new database();
-	$result = $db->login($tempUser->getEmail(), $tempUser->getPassword());
-
-	if($result == TRUE){
-		header('location: index.php');
+		<?php
 	}
 	else{
-		header('location: login.php');
+		$login = $_POST['login'];
+		$password = $_POST['password'];
+
+		$tempUser = new user();
+		$tempUser->setEmail($login);
+		$tempUser->setPassword($password);
+
+		$tempDao = new daoUser();
+		if($tempDao->login($tempUser->getEmail(), $tempUser->getPassword()) == TRUE){
+			header('location: index.php');
+		}
+		else{
+			?>
+
+			<script> 
+				alert('USUÁRIO OU SENHA INVÁLIDO');
+				parent.location = 'identification.php';
+			</script>
+
+			<?php
+		}
 	}
 ?>

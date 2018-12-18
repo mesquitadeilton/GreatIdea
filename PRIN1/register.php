@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<div class="content" style="height: auto;">
-			<form action="func_register.php">
+			<form action="func_register.php" method="POST">
 				<label>NOME</label>
 				<input id="credential_bar" name="name" type="text">
 				<br>
@@ -24,18 +24,22 @@
 				<input id="credential_bar" name="cpf" type="text">
 				<br>
 				<br>
+				<label>DATA DE NASCIMENTO</label>
+				<input id="credential_bar" name="birth_date" type="date">
+				<br>
+				<br>
 				<label>EMAIL</label>
 				<input id="credential_bar" name="email" type="text">
 				<br>
 				<br>
 				<label>TELEFONE</label>
-				<input id="credential_bar" name="phone" type="text">
+				<input id="credential_bar" name="phone" type="number">
 				<br>
 				<br>
 				<label>CIDADE</label>
 				<br>
 				<input id="credential_bar" name="city" type="text" style="width: 200px">
-				<select id="state" placeholder="ESTADO">
+				<select id="state" name="state">
 					<option>ACRE</option>
 				    <option>ALAGOAS</option>
 				    <option>AMAPA</option>
@@ -71,9 +75,9 @@
 				<br>
 				<br>
 				<br>
-				<input name="check_cliente" type="checkbox" style="margin-right: 5px;">
+				<input name="check_client" type="checkbox" style="margin-right: 5px;">
 				<label>CLIENTE</label>
-				<input name="check_criador" type="checkbox" style="margin-left: 20px; margin-right: 5px;">
+				<input name="check_creator" type="checkbox" style="margin-left: 20px; margin-right: 5px;">
 				<label>CRIADOR</label>
 				<input id="bt_submit" name="bt_register" type="submit" value="CADASTRAR">
 				<br>

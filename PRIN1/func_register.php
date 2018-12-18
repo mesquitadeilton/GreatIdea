@@ -1,30 +1,50 @@
 <?php
 	include 'user.php';
-	include 'database.php';
+	include 'daoUser.php';
 
-	ini_set('default_charset','UTF-8');
+	if(empty($_POST['name']) || empty($_POST['cpf']) || empty($_POST['email']) || empty($_POST['password'])){
+		?>
 
-	$name = $_POST["name"];
-	$email = $_POST["email"];
-	$phone = $_POST["phone"];
-	$city = $_POST["city"];
-	$password = $_POST["password"];
+		<script> 
+			alert('PREENCHA OS CAMPOS PARA CONTINUAR');
+			parent.location = 'register.php';
+		</script>
 
-	if(empty($name) || empty($email) || empty($phone) || empty($phone) || empty($city) || empty($password)){
-		header('location: register.php');
+		<?php
 	}
 	else{
+		$name = $_POST['name'];
+		$cpf = $_POST['cpf'];
+		$birth_date = $_POST['birth_date'];
+		$email = $_POST['email'];
+		$phone = $_POST['phone'];
+		$city = $_POST['city'];
+		$state = $_POST['state'];
+		$password = $_POST['password'];
+
 		$tempUser = new user();
 		$tempUser->setName($name);
+		$tempUser->setCPF($cpf);
+		$tempUser->setBirthDate($birth_date);
 		$tempUser->setEmail($email);
 		$tempUser->setPhone($phone);
 		$tempUser->setCity($city);
+		$tempUser->setState($state);
 		$tempUser->setPassword($password);
 
-		$db = new database();
-		$db->insert($tempUser->getName(), $tempUser->getEmail(), $tempUser->getPhone(), $tempUser->getCity(), $tempUser->getPassword());
+		$tempDao = new daoUser();
+		$tempDao->register($tempUser->getName(), $tempUser->getCPF(), $tempUser->getBirthDate(), $tempUser->getEmail(), $tempUser->getPhone(), $tempUser->getCity(), $tempUser->getState(), $tempUser->getPassword());
 
-		$result = $db->login($tempUser->getEmail(), $tempUser->getPassword());
+		session_start();
+		$nick = explode(" ", (string)$tempUser->getName());
+		$_SESSION['nick'] = strtoupper($nick[0]);
+		$_SESSION['name'] = $tempUser->getName();
+		$_SESSION['cpf'] = $tempUser->getCPF();
+		$_SESSION['birth_date'] = $tempUser->getBirthDate();
+		$_SESSION['email'] = $tempUser->getEmail();
+		$_SESSION['phone'] = $tempUser->getPhone();
+		$_SESSION['city'] = $tempUser->getCity();
+		$_SESSION['state'] = $tempUser->getState();
 
 		header('location: index.php');
 	}

@@ -13,8 +13,9 @@
 	</nav>
 
 	<?php
-		if(session_status() !== PHP_SESSION_ACTIVE){ 
-			session_start();
+		session_start();
+
+		if(empty($_SESSION['nick'])){
 	?>
 		<div class="button">
 			<form action="identification.php" style="margin-left: 5px; margin-right: 5px;">
@@ -27,8 +28,11 @@
 		else{
 	?>
 			<div class="button">
-				<form action="account.php" style="margin-left: 5px; margin-right: 5px;">
-					<input id="bt_identification" name="bt_account" type="submit" value="<?php echo "Olá, ".($_SESSION['name']) ?>">
+				<form action="account.php">
+					<input id="bt_identification" name="bt_account" type="submit" value="<?php echo ($_SESSION['nick']) ?>">
+				</form>
+				<form action="func_logout.php" style="margin-left: -5px">
+					<input id="bt_identification" name="bt_account" type="submit" value="SAIR">
 				</form>
 			</div>
 	<?php
