@@ -12,12 +12,22 @@
 }
 
 .logo{
+	margin: auto;
+	height: 70px;
+	width: auto;
+}
+
+.logo a{
+	display: flex;
+	text-decoration: none;
+}
+
+.logo p{
+	color: #000;
 	font-family: 'Righteous', cursive;
 	font-size: 2em;
 	height: 70px;
 	line-height: 70px;
-	margin: auto;
-	width: 250px;
 }
 
 .menu{

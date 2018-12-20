@@ -2,8 +2,7 @@
 
 <div class="top">
 	<div class="logo">
-		<img src="img/logo.png" height="50" width="50" style="margin: 10px">
-		Great Idea
+		<a href="index.php"><img src="img/logo.png" height="50" width="50" style="line-height: 70px; margin: 10px 0px;"><p>Great Idea<p></a>
 	</div>
 
 	<nav class="menu">
