@@ -13,12 +13,12 @@
 		<?php
 	}
 	else{
-		$name = $_POST['name'];
+		$name = strtoupper($_POST['name']);
 		$cpf = $_POST['cpf'];
 		$birth_date = $_POST['birth_date'];
-		$email = $_POST['email'];
+		$email = strtoupper($_POST['email']);
 		$phone = $_POST['phone'];
-		$city = $_POST['city'];
+		$city = strtoupper($_POST['city']);
 		$state = $_POST['state'];
 		$password = $_POST['password'];
 
@@ -33,27 +33,40 @@
 		$tempUser->setPassword($password);
 
 		$tempDao = new daoUser();
-		$tempDao->register($tempUser->getName(), $tempUser->getCPF(), $tempUser->getBirthDate(), $tempUser->getEmail(), $tempUser->getPhone(), $tempUser->getCity(), $tempUser->getState(), $tempUser->getPassword());
+		
+		if($tempDao->validate_register($tempUser->getCPF(), $tempUser->getEmail()) == TRUE){
+			$tempDao->register($tempUser->getName(), $tempUser->getCPF(), $tempUser->getBirthDate(), $tempUser->getEmail(), $tempUser->getPhone(), $tempUser->getCity(), $tempUser->getState(), $tempUser->getPassword());
 
-		if($_POST['check_client']){
-			$tempDao->register_client($tempUser->getCPF());
+			if($_POST['check_client']){
+				$tempDao->register_client($tempUser->getCPF());
+			}
+
+			if($_POST['check_creator']){
+				$tempDao->register_creator($tempUser->getCPF());
+			}
+
+			session_start();
+			$nick = explode(" ", (string)$tempUser->getName());
+			$_SESSION['nick'] = $nick[0];
+			$_SESSION['name'] = $tempUser->getName();
+			$_SESSION['cpf'] = $tempUser->getCPF();
+			$_SESSION['birth_date'] = $tempUser->getBirthDate();
+			$_SESSION['email'] = $tempUser->getEmail();
+			$_SESSION['phone'] = $tempUser->getPhone();
+			$_SESSION['city'] = $tempUser->getCity();
+			$_SESSION['state'] = $tempUser->getState();
+
+			header('location: index.php');
 		}
+		else{
+			?>
 
-		if($_POST['check_creator']){
-			$tempDao->register_creator($tempUser->getCPF());
+			<script> 
+				alert('USUÁRIO JÁ CADASTRADO');
+				parent.location = 'register.php';
+			</script>
+
+			<?php
 		}
-
-		session_start();
-		$nick = explode(" ", (string)$tempUser->getName());
-		$_SESSION['nick'] = strtoupper($nick[0]);
-		$_SESSION['name'] = $tempUser->getName();
-		$_SESSION['cpf'] = $tempUser->getCPF();
-		$_SESSION['birth_date'] = $tempUser->getBirthDate();
-		$_SESSION['email'] = $tempUser->getEmail();
-		$_SESSION['phone'] = $tempUser->getPhone();
-		$_SESSION['city'] = $tempUser->getCity();
-		$_SESSION['state'] = $tempUser->getState();
-
-		header('location: index.php');
 	}
 ?>

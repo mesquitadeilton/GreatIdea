@@ -29,7 +29,7 @@
 	?>
 			<div class="button">
 				<form action="account.php">
-					<input id="bt_identification" name="bt_account" type="submit" value="<?php echo ($_SESSION['nick']) ?>">
+					<input id="bt_identification" name="bt_account" type="submit" value="<?php echo "OLÁ, ".($_SESSION['nick']) ?>">
 				</form>
 				<form action="func_logout.php" style="margin-left: -5px">
 					<input id="bt_identification" name="bt_account" type="submit" value="SAIR">

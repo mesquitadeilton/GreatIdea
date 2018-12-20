@@ -12,35 +12,37 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
+
+		<script language="JavaScript" src="masks.js"></script>
 	</head>
 	<body>
 		<div class="content" style="height: auto;">
 			<form action="func_register.php" method="POST">
 				<label>NOME</label>
-				<input id="credential_bar" name="name" placeholder="CAMPO OBRIGATÓRIO" type="text">
+				<input id="credential_bar" maxlength="255" name="name" onkeyup="lettersOnly(this)" placeholder="CAMPO OBRIGATÓRIO" type="text">
 				<br>
 				<br>
 				<label>CPF</label>
-				<input id="credential_bar" name="cpf" placeholder="CAMPO OBRIGATÓRIO" type="text">
+				<input id="credential_bar" maxlength="14" name="cpf" onkeypress="mask(this, maskCPF)" placeholder="CAMPO OBRIGATÓRIO" type="text">
 				<br>
 				<br>
 				<label>DATA DE NASCIMENTO</label>
-				<input id="credential_bar" name="birth_date" type="date">
+				<input id="credential_bar" name="birth_date" maxlength="10" onkeypress="mask(this, maskDate);" type="text">
 				<br>
 				<br>
 				<label>EMAIL</label>
-				<input id="credential_bar" name="email" placeholder="CAMPO OBRIGATÓRIO" type="text">
+				<input id="credential_bar" maxlength="255" name="email" placeholder="CAMPO OBRIGATÓRIO" type="email">
 				<br>
 				<br>
 				<label>TELEFONE</label>
-				<input id="credential_bar" name="phone" type="number">
+				<input id="credential_bar" maxlength="15" name="phone" onkeyup="mask(this, maskPhone)" type="text">
 				<br>
 				<br>
 				<label>CIDADE</label>
 				<br>
-				<input id="credential_bar" name="city" type="text" style="width: 200px">
+				<input id="credential_bar" maxlength="100" name="city" onkeyup="lettersOnly(this)" type="text" style="width: 200px">
 				<select id="state" name="state">
-					<option disabled selected>ESTADO</option>
+					<option disabled selected value=NULL>ESTADO</option>
 					<option>ACRE</option>
 				    <option>ALAGOAS</option>
 				    <option>AMAPA</option>

@@ -22,6 +22,20 @@
 			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA");
 		}
 
+		public function validate_register($cpf, $email){
+			$link = $this->connect();
+			$string = "SELECT * FROM `users` WHERE `cpf` = '$cpf' OR `email` = '$email'";
+
+			$query = mysqli_query($link, $string) or die("FALHA NA BUSCA");
+
+			if(mysqli_num_rows($query) > 0){
+				return FALSE;
+			}
+			else{
+				return TRUE;
+			}
+		}
+
 		public function register_client($cpf){
 			$link = $this->connect();
 			$string = "INSERT INTO client(cpf) VALUES('$cpf')";
@@ -47,7 +61,7 @@
 				
 				session_start();
 				$nick = explode(" ", (string)$search['name']);
-				$_SESSION['nick'] = strtoupper($nick[0]);
+				$_SESSION['nick'] = $nick[0];
 				$_SESSION['name'] = $search['name'];
 				$_SESSION['cpf'] = $search['cpf'];
 				$_SESSION['birth_date'] = $search['birth_date'];
