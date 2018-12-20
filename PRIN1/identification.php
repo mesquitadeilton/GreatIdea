@@ -6,6 +6,8 @@
 
 		<title>Great Idea | FAZER LOGIN</title>
 
+		<link rel="shortcut icon" href="img/favicon.png"/>
+
 		<link rel="stylesheet" href="identification.css">
 		<link rel="stylesheet" href="index.css">
 		<link rel="stylesheet" href="menu.css">
@@ -17,7 +19,7 @@
 		<div class="content" style="margin-bottom: 20px;">
 			<form action="func_login.php" method="POST">
 				<label>EMAIL</label>
-				<input id="credential_bar" name="login" type="text">
+				<input autofocus="on" id="credential_bar" name="login" type="email">
 				<br>
 				<br>
 				<br>

@@ -1,5 +1,8 @@
+<link rel="shortcut icon" href="img/favicon.png" />
+
 <div class="top">
 	<div class="logo">
+		<img src="img/logo.png" height="50" width="50" style="margin: 10px">
 		Great Idea
 	</div>
 

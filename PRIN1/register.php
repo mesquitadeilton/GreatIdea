@@ -6,6 +6,8 @@
 
 		<title>Great Idea | CADASTRAR</title>
 
+		<link rel="shortcut icon" href="img/favicon.png"/>
+
 		<link rel="stylesheet" href="identification.css">
 		<link rel="stylesheet" href="index.css">
 		<link rel="stylesheet" href="menu.css">
@@ -16,10 +18,10 @@
 		<script language="JavaScript" src="masks.js"></script>
 	</head>
 	<body>
-		<div class="content" style="height: auto;">
+		<div class="content">
 			<form action="func_register.php" method="POST">
 				<label>NOME</label>
-				<input id="credential_bar" maxlength="255" name="name" onkeyup="lettersOnly(this)" placeholder="CAMPO OBRIGATÓRIO" type="text">
+				<input autofocus="on" id="credential_bar" maxlength="255" name="name" onkeyup="lettersOnly(this)" placeholder="CAMPO OBRIGATÓRIO" type="text">
 				<br>
 				<br>
 				<label>CPF</label>
@@ -27,7 +29,7 @@
 				<br>
 				<br>
 				<label>DATA DE NASCIMENTO</label>
-				<input id="credential_bar" name="birth_date" maxlength="10" onkeypress="mask(this, maskDate);" type="text">
+				<input id="credential_bar" maxlength="10" name="birth_date" onkeypress="mask(this, maskDate)" type="text">
 				<br>
 				<br>
 				<label>EMAIL</label>

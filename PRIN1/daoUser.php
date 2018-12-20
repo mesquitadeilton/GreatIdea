@@ -28,24 +28,24 @@
 
 			$query = mysqli_query($link, $string) or die("FALHA NA BUSCA");
 
-			if(mysqli_num_rows($query) > 0){
-				return FALSE;
+			if(mysqli_num_rows($query) == 0){
+				return TRUE;
 			}
 			else{
-				return TRUE;
+				return FALSE;
 			}
 		}
 
 		public function register_client($cpf){
 			$link = $this->connect();
-			$string = "INSERT INTO client(cpf) VALUES('$cpf')";
+			$string = "INSERT INTO users_client(cpf) VALUES('$cpf')";
 
 			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA CLIENT");
 		}
 
 		public function register_creator($cpf){
 			$link = $this->connect();
-			$string = "INSERT INTO creator(cpf) VALUES('$cpf')";
+			$string = "INSERT INTO users_creator(cpf) VALUES('$cpf')";
 
 			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA CLIENT");
 		}
@@ -70,12 +70,108 @@
 				$_SESSION['city'] = $search['city'];
 				$_SESSION['state'] = $search['state'];
 
+				if($this->check_account_client($search['cpf']))
+					$_SESSION['check_client'] = TRUE;
+				else
+					$_SESSION['check_client'] = FALSE;
+
+				if($this->check_account_creator($search['cpf']))
+					$_SESSION['check_creator'] = TRUE;
+				else
+					$_SESSION['check_creator'] = FALSE;
+
 				return TRUE;
 			}
 			else{
 				return FALSE;
 			}
 
+		}
+
+		public function check_account_client($cpf){
+			$link = $this->connect();
+			$string = "SELECT * FROM `users_client` WHERE `cpf` = '$cpf'";
+
+			$query = mysqli_query($link, $string) or die("FALHA NA BUSCA");
+
+			if(mysqli_num_rows($query) > 0)
+				return TRUE;
+			else
+				return FALSE;
+		}
+
+		public function check_account_creator($cpf){
+			$link = $this->connect();
+			$string = "SELECT * FROM `users_creator` WHERE `cpf` = '$cpf'";
+
+			$query = mysqli_query($link, $string) or die("FALHA NA BUSCA");
+
+			if(mysqli_num_rows($query) > 0)
+				return TRUE;
+			else
+				return FALSE;
+		}
+
+		public function update_register_name($new_name, $cpf){
+			$link = $this->connect();
+			$string = "UPDATE users SET name = '$new_name' WHERE cpf = '$cpf'";
+
+			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA");
+
+			session_start();
+			$nick = explode(" ", (string)$new_name);
+			$_SESSION['nick'] = $nick[0];
+			$_SESSION['name'] = $new_name;
+		}
+
+		public function update_register_birth_date($new_birth_date, $cpf){
+			$link = $this->connect();
+			$string = "UPDATE users SET birth_date = '$new_birth_date' WHERE cpf = '$cpf'";
+
+			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA");
+
+			session_start();
+			$_SESSION['birth_date'] = $new_birth_date;
+		}
+
+		public function update_register_phone($new_phone, $cpf){
+			$link = $this->connect();
+			$string = "UPDATE users SET phone = '$new_phone' WHERE cpf = '$cpf'";
+
+			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA");
+
+			session_start();
+			$_SESSION['phone'] = $new_phone;
+		}
+
+		public function update_register_city($new_city, $cpf){
+			$link = $this->connect();
+			$string = "UPDATE users SET city = '$new_city' WHERE cpf = '$cpf'";
+
+			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA");
+
+			session_start();
+			$_SESSION['city'] = $new_city;
+		}
+
+		public function update_register_state($new_state, $cpf){
+			$link = $this->connect();
+			$string = "UPDATE users SET state = '$new_state' WHERE cpf = '$cpf'";
+
+			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA");
+
+			session_start();
+			$_SESSION['state'] = $new_state;
+		}
+
+		public function update_register_password($new_password, $cpf){
+			$link = $this->connect();
+			$string = "UPDATE users SET password = MD5('$new_password') WHERE cpf = '$cpf'";
+
+			mysqli_query($link, $string) or die("FALHA AO INSERIR NA TABELA");
+
+			session_start();
+			$_SESSION['password'] = $new_password;
 		}
 	}
 ?>

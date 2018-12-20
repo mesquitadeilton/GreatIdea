@@ -13,12 +13,12 @@
 		<?php
 	}
 	else{
-		$name = strtoupper($_POST['name']);
+		$name = mb_strtoupper($_POST['name']);
 		$cpf = $_POST['cpf'];
 		$birth_date = $_POST['birth_date'];
-		$email = strtoupper($_POST['email']);
+		$email = mb_strtoupper($_POST['email']);
 		$phone = $_POST['phone'];
-		$city = strtoupper($_POST['city']);
+		$city = mb_strtoupper($_POST['city']);
 		$state = $_POST['state'];
 		$password = $_POST['password'];
 
@@ -39,10 +39,24 @@
 
 			if($_POST['check_client']){
 				$tempDao->register_client($tempUser->getCPF());
+
+				session_start();
+				$_SESSION['check_client'] = TRUE;
+			}
+			else{
+				session_start();
+				$_SESSION['check_client'] = FALSE;
 			}
 
 			if($_POST['check_creator']){
 				$tempDao->register_creator($tempUser->getCPF());
+
+				session_start();
+				$_SESSION['check_creator'] = TRUE;
+			}
+			else{
+				session_start();
+				$_SESSION['check_creator'] = FALSE;
 			}
 
 			session_start();

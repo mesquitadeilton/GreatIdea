@@ -8,6 +8,8 @@
 	$_SESSION['phone'] = NULL;
 	$_SESSION['city'] = NULL;
 	$_SESSION['state'] = NULL;
+	$_SESSION['check_client'] = NULL;
+	$_SESSION['check_creator'] = NULL;
 
 	header('location: index.php');
 ?>

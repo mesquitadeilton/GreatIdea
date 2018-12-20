@@ -6,6 +6,8 @@
 
 		<title>Great Idea</title>
 
+		<link rel="shortcut icon" href="img/favicon.png"/>
+
 		<link rel="stylesheet" href="index.css">
 		<link rel="stylesheet" href="menu.css">
 
@@ -20,7 +22,7 @@
 
 		<div class="search">
 			<form action="search.php" style="margin: auto;">
-				<input id="search_bar" name="search_bar" type="text">
+				<input autofocus="on" id="search_bar" name="search_bar" type="text">
 				<input id="bt_search" name="bt_search" type="submit" value="BUSCAR">
 			</form>
 		</div>
