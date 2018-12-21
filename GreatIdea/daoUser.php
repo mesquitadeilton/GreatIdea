@@ -1,7 +1,7 @@
 <?php
 	class daoUser{
 		private $servername = "localhost";
-		private $database = "great_idea";
+		private $dbname = "dbideias";
 		private $username = "root";
 		private $password = "";
 
@@ -10,7 +10,7 @@
 		}
 
 		public function connect(){
-			$link = mysqli_connect($this->servername, $this->username, $this->password, $this->database) or die("FALHA NA CONEXÃO");
+			$link = mysqli_connect($this->servername, $this->username, $this->password, $this->$dbname) or die("FALHA NA CONEXÃO");
 
 			return $link;
 		}
@@ -58,7 +58,7 @@
 
 			if(mysqli_num_rows($query) > 0){
 				$search = mysqli_fetch_array($query);
-				
+
 				session_start();
 				$nick = explode(" ", (string)$search['name']);
 				$_SESSION['nick'] = $nick[0];
